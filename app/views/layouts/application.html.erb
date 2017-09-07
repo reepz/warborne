@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Warborne</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Caesar+Dressing" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="main-wrapper">
+      <%= yield %>
+    </div>
+  </body>
+</html>
