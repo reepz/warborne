@@ -9,7 +9,7 @@
     </tr>
     <% @users.each do |user| %>
       <tr>
-        <th><%= image_tag("#{user.display_clan_rank}")%></th>
+        <th><%= image_tag("#{user.display_clan_rank}", height: "48", width: "48")%></th>
         <th><%= user.full_battle_tag %></th>
         <th><%= user.display_division_name %></th>
         <th><%= user.hl_mmr %></th>

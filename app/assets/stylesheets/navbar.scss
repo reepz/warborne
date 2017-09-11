@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px gray solid;
+
+  a {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    transition: 0.8s;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:hover{
+    color: #ff6600;
+  }
+
+  #links {
+   list-style-type: none;
+   text-decoration: none;
+   color: white;
+   display: flex;
+   li {
+    padding: 0 5px 0 5px;
+    display: flex;
+    align-items: center;
+   }
+  }
+
+  #logo-title {
+   font-family: 'Caesar Dressing', cursive;
+   font-size: 2.44em;
+   margin: 5px 0 5px 0;
+   a {
+     color: #ff6600;
+     transition: 0.7s;
+   }
+   a:hover{
+     color: gray;
+   }
+  }
+
+}

@@ -20,22 +20,20 @@
    font-family: 'Rajdhani', sans-serif;
  }
 
-a {
-  list-style-type: none;
-  text-decoration: none;
+#main-wrapper {
+  a {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:hover{
+    color: #ff6600;
+    font-weight: lighter;
+  }
 }
-
-a:visited {
-  color: white;
-}
-
- .navbar {
-   display: flex;
-   justify-content: space-between;
- }
-
- #links {
-   list-style-type: none;
-   text-decoration: none;
-   color: white;
- }
