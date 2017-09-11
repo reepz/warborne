@@ -1,6 +1,9 @@
 require 'httparty'
 
 class User < ApplicationRecord
+
+  before_save :get_hots_logs_user_data
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -48,15 +51,11 @@ class User < ApplicationRecord
     end
   end
 
-  def get_hots_logs_hero_league_mmr
+  def get_hots_logs_user_data
     url = "https://api.hotslogs.com/Public/Players/2/#{hots_logs_battle_tag}"
     response = HTTParty.get(url).parsed_response
-    hl_mmr = response["LeaderboardRankings"][1]["CurrentMMR"]
+    self.hl_mmr = response["LeaderboardRankings"][1]["CurrentMMR"]
+    self.hl_division = response["LeaderboardRankings"][1]["LeagueID"]
   end
 
-  def get_hots_logs_hero_league_division
-    url = "https://api.hotslogs.com/Public/Players/2/#{hots_logs_battle_tag}"
-    response = HTTParty.get(url).parsed_response
-    hl_division = response["LeaderboardRankings"][1]["LeagueID"]
-  end
 end
