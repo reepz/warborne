@@ -1,31 +1,20 @@
 <div class="player-info-wrapper">
-<h1>Members:</h1>
-  <table class="player-info-table">
-    <tr>
-      <th>Rank</th>
-      <th>Name</th>
-      <th>HL Division</th>
-      <th>HL MMR</th>
-    </tr>
-    <% @users.each do |user| %>
+  <h1>Members:</h1>
+    <table class="player-info-table">
       <tr>
-        <th><%= image_tag("#{user.display_clan_rank}", height: "48", width: "48")%></th>
-        <th><%= user.full_battle_tag %></th>
-        <th><%= user.display_division_name %></th>
-        <th><%= user.hl_mmr %></th>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>HL Division</th>
+        <th>MMR</th>
       </tr>
-    <% end %>
-  </table>
-</div>
-
-
-
-  <!-- <% @users.each do |user| %>
-    <div class="player-info">
-      <%= image_tag("#{user.display_clan_rank}")%>
-      <%= user.full_battle_tag %>
-      <%= user.display_division_name %>
-      <%= user.hl_mmr %>
-    </div>
-  <% end %> -->
+      <% @users.each do |user| %>
+        <tr>
+          <th><%= image_tag("#{user.display_clan_rank}", height: "48", width: "48")%></th>
+          <th><%= user.full_battle_tag %></th>
+          <th><%= image_tag("#{user.display_division_name}", height: "42", width: "42")%></th>
+          <th><%= user.hl_mmr %></th>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
