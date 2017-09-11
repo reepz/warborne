@@ -1,13 +1,31 @@
+<div class="player-info-wrapper">
 <h1>Members:</h1>
-<% @users.each do |user| %>
-  <div class="">
-    <%= user.display_clan_rank %>
-    <%= user.nick %>
-    <%= user.hl_mmr %>
-    <%= user.display_division_name %>
-    <!-- <% if user_signed_in? && current_user.is_admin? %>
-      <%= link_to "Edit", edit_user_registration_path %>
-    <% end %> -->
-    <%= user.full_battle_tag %>
-  </div>
-<% end %>
+  <table class="player-info-table">
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>HL Division</th>
+      <th>HL MMR</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <th><%= image_tag("#{user.display_clan_rank}")%></th>
+        <th><%= user.full_battle_tag %></th>
+        <th><%= user.display_division_name %></th>
+        <th><%= user.hl_mmr %></th>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+
+
+  <!-- <% @users.each do |user| %>
+    <div class="player-info">
+      <%= image_tag("#{user.display_clan_rank}")%>
+      <%= user.full_battle_tag %>
+      <%= user.display_division_name %>
+      <%= user.hl_mmr %>
+    </div>
+  <% end %> -->
+</div>

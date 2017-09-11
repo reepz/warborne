@@ -1,5 +1,3 @@
-require 'httparty'
-
 class User < ApplicationRecord
 
   before_save :get_hots_logs_user_data
@@ -16,13 +14,13 @@ class User < ApplicationRecord
   def display_clan_rank
     case clan_rank
     when 1
-      'Warchief'
+      'BTNHeroTaurenChieftain'
     when 2
-      'Shaman'
+      'BTNShaman'
     when 3
-      'Grunt'
+      'BTNGrunt'
     when 4
-      'Peon'
+      'BTNPeon'
     end
   end
 
