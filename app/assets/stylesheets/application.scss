@@ -16,4 +16,26 @@
 
  body {
    background-color: #222;
+   color: #e0ebeb;
+   font-family: 'Rajdhani', sans-serif;
+ }
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+ .navbar {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ #links {
+   list-style-type: none;
+   text-decoration: none;
+   color: white;
  }

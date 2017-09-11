@@ -1,0 +1,13 @@
+<h1>Members:</h1>
+<% @users.each do |user| %>
+  <div class="">
+    <%= user.display_clan_rank %>
+    <%= user.nick %>
+    <%= user.hl_mmr %>
+    <%= user.display_division_name %>
+    <!-- <% if user_signed_in? && current_user.is_admin? %>
+      <%= link_to "Edit", edit_user_registration_path %>
+    <% end %> -->
+    <%= user.full_battle_tag %>
+  </div>
+<% end %>

@@ -11,7 +11,21 @@
   </head>
 
   <body>
+    <nav class="navbar">
+      <h4><%=link_to "Warborne", clans_index_path, id: "logo-title" %></h4>
+      <ul id="links">
+        <% if !user_signed_in? %>
+            <li><%=link_to "Log in", new_user_session_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li><%=link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <li><%=link_to "Profile", edit_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
     <div id="main-wrapper">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
   </body>

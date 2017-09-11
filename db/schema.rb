@@ -10,25 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517074657) do
+ActiveRecord::Schema.define(version: 20170909224815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "champions", id: :serial, force: :cascade do |t|
+  create_table "clans", force: :cascade do |t|
     t.string "name"
-    t.integer "poll_id"
-    t.integer "votecount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["poll_id"], name: "index_champions_on_poll_id"
   end
 
-  create_table "polls", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.integer "votecount"
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nick", null: false
+    t.integer "battle_tag", null: false
+    t.integer "clan_id", default: 1
+    t.integer "hl_mmr"
+    t.integer "hl_division"
+    t.boolean "admin", default: false
+    t.integer "clan_rank", default: 4
+    t.index ["clan_id"], name: "index_users_on_clan_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
